@@ -1,0 +1,132 @@
+/* --- ESTILOS GENERALES --- */
+body {
+    background-color: #050505;
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Asegúrate de tener esta fuente o una similar */
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* --- MENÚ SUPERIOR --- */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(0, 0, 0, 0.5); /* Más transparente para ver partículas */
+    backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    color: #fff;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-neon {
+    text-decoration: none;
+    color: #aaa;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.btn-neon:hover {
+    color: #00f3ff;
+    text-shadow: 0 0 10px #00f3ff;
+}
+
+/* --- SECCIÓN PRINCIPAL (HERO) --- */
+.hero-section {
+    display: flex; /* Divide izquierda y derecha */
+    justify-content: space-between; /* Separa los bloques al máximo */
+    align-items: center; /* Centra verticalmente */
+    height: 80vh;
+    padding: 0 10%;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- LADO IZQUIERDO: TEXTO --- */
+.content-left {
+    width: 45%;
+    color: #ffffff; /* CORRECCIÓN: Texto blanco para que se lea */
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    /* Opcional: Un estilo de fuente más moderno como en tu referencia */
+}
+
+.neon-highlight {
+    color: #00f3ff;
+    /* Efecto de texto neón/glitch sutil */
+    text-shadow: 2px 2px 0px rgba(0, 243, 255, 0.3);
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    color: #cccccc; /* Blanco grisáceo para el párrafo */
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+/* --- LADO DERECHO: BOTONES --- */
+.content-right {
+    display: flex;
+    flex-direction: row; /* CORRECCIÓN: Botones en fila horizontal */
+    gap: 20px; /* Espacio entre botones */
+    align-items: center;
+}
+
+/* --- ESTILO DE BOTONES (Como en la imagen de referencia) --- */
+.neon-button {
+    padding: 15px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    
+    /* Estilo base transparente con borde neón */
+    background-color: transparent;
+    color: #00f3ff;
+    border: 2px solid #00f3ff;
+    
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    min-width: 120px; /* Para que tengan un tamaño uniforme */
+}
+
+/* Efecto Hover: Se ilumina al pasar el mouse */
+.neon-button:hover, .neon-button.outline:hover {
+    background-color: rgba(0, 243, 255, 0.1); /* Relleno sutil */
+    color: #ffffff; /* Texto blanco al iluminarse */
+    /* Resplandor neón intenso en el borde y hacia afuera */
+    box-shadow: 0 0 15px #00f3ff, inset 0 0 10px #00f3ff;
+}
+
+/* El tercer botón ya no necesita estilo diferente, todos son iguales */
+.neon-button.outline {
+     /* Hereda los estilos del botón principal */
+}
