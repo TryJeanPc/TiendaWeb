@@ -1,0 +1,289 @@
+/* --- ESTILOS GENERALES --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #050505;
+    margin: 0;
+    /* CAMBIO IMPORTANTE: Usamos overflow-x para ocultar solo lo horizontal */
+    /* Dejamos el vertical en auto por si la pantalla es muy bajita en PC */
+    overflow-x: hidden; 
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* --- MENÚ SUPERIOR --- */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    color: #fff;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-neon {
+    text-decoration: none;
+    color: #aaa;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.btn-neon:hover {
+    color: #00f3ff;
+    text-shadow: 0 0 10px #00f3ff;
+}
+
+/* --- SECCIÓN PRINCIPAL (HERO) --- */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80vh; /* Usamos min-height para que pueda crecer si falta espacio */
+    padding: 0 10%;
+    gap: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- LADO IZQUIERDO: TEXTO --- */
+.content-left {
+    width: 50%;
+}
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 1.1;
+}
+
+.neon-highlight {
+    color: #00f3ff;
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.8;
+    font-weight: 400;
+    max-width: 95%;
+}
+
+/* --- LADO DERECHO: BOTONES --- */
+.content-right {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: flex-end;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+/* --- ESTILO DE BOTONES --- */
+.neon-button {
+    font-family: 'Orbitron', sans-serif;
+    padding: 15px 25px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    
+    background: transparent;
+    color: #00f3ff;
+    border: 2px solid #00f3ff;
+    min-width: 140px;
+    
+    transition: all 0.3s ease-in-out;
+}
+
+.neon-button:hover {
+    background-color: rgba(0, 243, 255, 0.15);
+    color: #ffffff;
+    box-shadow: 0 0 20px #00f3ff, inset 0 0 10px #00f3ff;
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+/* --- EFECTO GLITCH LIMPIO SOLO EN TEXTO --- */
+.hero-title {
+    position: relative;
+    display: inline-block;
+    animation: glitch-skew 5s infinite linear alternate-reverse;
+}
+
+.hero-title::before,
+.hero-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    opacity: 0.7;
+}
+
+.hero-title::before {
+    color: #00f3ff;
+    z-index: -1;
+    animation: glitch-anim-1 3s infinite linear alternate-reverse;
+}
+
+.hero-title::after {
+    color: #ff00c1;
+    z-index: -2;
+    animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(15% 0 60% 0); transform: translate(-2px, 0); }
+  20% { clip-path: inset(50% 0 30% 0); transform: translate(1px, 0); }
+  40% { clip-path: inset(5% 0 80% 0); transform: translate(-1px, 0); }
+  60% { clip-path: inset(70% 0 10% 0); transform: translate(2px, 0); }
+  80% { clip-path: inset(25% 0 40% 0); transform: translate(-2px, 0); }
+  100% { clip-path: inset(40% 0 20% 0); transform: translate(1px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(30% 0 50% 0); transform: translate(2px, 0); }
+  20% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 0); }
+  40% { clip-path: inset(60% 0 20% 0); transform: translate(1px, 0); }
+  60% { clip-path: inset(20% 0 40% 0); transform: translate(-2px, 0); }
+  80% { clip-path: inset(45% 0 15% 0); transform: translate(2px, 0); }
+  100% { clip-path: inset(5% 0 85% 0); transform: translate(-1px, 0); }
+}
+
+@keyframes glitch-skew {
+  0%, 90% { transform: skew(0deg); }
+  92% { transform: skew(1deg); }
+  94% { transform: skew(-1deg); }
+  96% { transform: skew(0deg); }
+}
+
+/* =========================================
+   VERSIÓN MÓVIL (CORREGIDA FINAL)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    
+    /* 1. SOLUCIÓN DEL SCROLL: Desbloqueamos el scroll vertical */
+    body {
+        overflow-y: auto !important; /* PERMITE BAJAR */
+        overflow-x: hidden; /* Sigue bloqueando los lados */
+        height: auto;
+    }
+    
+    html {
+        overflow-y: auto !important;
+    }
+
+    /* 2. MENÚ */
+    .menu {
+        flex-direction: column;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.95);
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    /* 3. ESTRUCTURA VERTICAL */
+    .hero-section {
+        flex-direction: column;
+        justify-content: flex-start;
+        /* IMPORTANTE: Height auto permite que crezca hacia abajo lo que sea necesario */
+        height: auto; 
+        padding: 120px 5% 80px 5%; /* Mucho espacio abajo para poder hacer scroll */
+        text-align: center;
+        gap: 30px;
+    }
+
+    /* 4. TEXTO */
+    .content-left {
+        width: 100%;
+        z-index: 2;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+        line-height: 1.1;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* 5. BOTONES */
+    .content-right {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        z-index: 2;
+        padding-bottom: 50px; /* Margen extra al final */
+    }
+
+    .neon-button {
+        width: 80%;
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    /* 6. IMAGEN PREDATOR: Fondo centrado y transparente */
+    .tilt-box {
+        position: fixed !important; 
+        top: 50% !important; 
+        left: 50% !important; 
+        transform: translate(-50%, -50%) !important;
+        
+        width: 90vw !important;
+        opacity: 0.25 !important;
+        z-index: 0;
+        pointer-events: none;
+    }
+}
