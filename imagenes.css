@@ -1,0 +1,33 @@
+/* Limpiamos el body para que no haya conflictos */
+body {
+    background-color: #050505;
+    /* Ya no ponemos background-image aquí */
+}
+
+body::before {
+    display: none; /* Desactiva la capa anterior si quedó algo */
+}
+
+/* --- CONTENEDOR DE LA IMAGEN 3D --- */
+.tilt-box {
+    position: fixed; /* Se queda fija en la pantalla */
+    top: -5%;        /* Centrado vertical inicial */
+    right: -18%;       /* Pegado a la derecha (ajusta este % para mover izq/der) */
+    transform: translateY(-50%); /* Corrección para centro vertical perfecto */
+    
+    width: 45vw;     /* Tamaño de la imagen (45% del ancho de pantalla) */
+    z-index: -1;     /* Detrás del texto pero delante del fondo negro */
+    
+    /* Configuración para que el tilt funcione suave */
+    transform-style: preserve-3d;
+}
+
+/* Estilo de la imagen interna */
+.tilt-box img {
+    width: 100%;     /* Ocupa todo el espacio de la caja */
+    height: auto;    /* Mantiene la proporción para no deformarse */
+    opacity: 0.7;    /* Transparencia (ajusta a tu gusto) */
+    
+    /* Sombra opcional para resaltar el efecto 3D */
+    filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.2));
+}
